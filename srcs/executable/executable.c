@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:49:57 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/06 18:15:17 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/06 18:21:22 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,6 @@ void	executable(t_all *all)
 	}
 	else
 	{
-		write(STDERR, "2", 1);
 		ft_pipes(all, node, fd_old);
 	}
 	dup2(0, STDOUT);
