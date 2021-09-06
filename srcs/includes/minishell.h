@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/17 14:15:40 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/06 13:35:32 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -280,6 +280,12 @@ void	parse_pipe(t_all *all);
 	Buidins
 */
 int		ft_echo(char **args);
+int		ft_pwd(void);
+int		ft_cd(t_all *all, t_list *node);
+int		ft_exit_bi(t_all *all, t_list *node);
+int		ft_arrsize(char **args);
+int		ft_env(t_all *all, t_list *node);
+int		ft_export(t_all *all, t_list *node);
 
 /*
 	SHLVL

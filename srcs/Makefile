@@ -20,7 +20,7 @@ SRCS	= 	main/minishell.c main/init_term.c main/init_all.c \
 			signals/ft_signals.c \
 			enviroment/env.c enviroment/env_2.c\
 			redirect/redirect.c redirect/redirect_2.c\
-			buildins/echo.c \
+			buildins/echo.c buildins/pwd.c buildins/cd.c buildins/exit.c buildins/env.c\
 			shel_lvl/increment_shell_lvl.c
 
 OBJ		=	$(SRCS:.c=.o)

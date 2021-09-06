@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executable_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:58:36 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/17 18:21:50 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/06 13:32:18 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@ int	build_in(t_all *all, t_list *node)
 {
 	if (!ft_strcmp(node->com, "echo"))
 		return (ft_echo(node->args));
+	if (!ft_strcmp(node->com, "pwd"))
+		return (ft_pwd());
+	if (!ft_strcmp(node->com, "cd"))
+		return (ft_cd(all, node));
+	if (!ft_strcmp(node->com, "env"))
+		return (ft_env(all, node));
+//	if (!ft_strcmp(node->com, "export"))
+//		return (ft_export(all, node));
+	if (!ft_strcmp(node->com, "exit"))
+		return (ft_exit_bi(all, node));
+		
 	return (-1);
 }
 
