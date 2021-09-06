@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:49:57 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/03 16:09:48 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/06 18:15:17 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,12 @@ int		is_buildin(t_pipe *node)
 	{
 		if (!ft_strcmp(node->list[i]->com, "echo"))
 			return (1);
+		if (!ft_strcmp(node->list[i]->com, "exit"))
+			return (1);
+		if (!ft_strcmp(node->list[i]->com, "pwd"))
+			return (1);
+		if (!ft_strcmp(node->list[i]->com, "cd"))
+			return (1);
 		i++;
 	}
 	return (0);
@@ -108,8 +114,10 @@ void	ft_pipes_7(t_all *all, int fd_old, t_pipe *node, int *fd)
 	error_dup(fd_old, node, fd);
 	close(fd[0]);
 	while (node->list[i])
-	{	
+	{
 		status = build_in(all, node->list[i]);
+		if (status != -1)
+			break ;
 		i++;
 	}
 	g_sig.exit_stat = status;
@@ -137,6 +145,7 @@ void	executable(t_all *all)
 	}
 	else
 	{
+		write(STDERR, "2", 1);
 		ft_pipes(all, node, fd_old);
 	}
 	dup2(0, STDOUT);
