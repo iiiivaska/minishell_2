@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 11:19:03 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 14:09:41 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/07 11:06:41 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*get_key(t_all *all, char	*str)
 	key = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
 	if (!key)
 		ft_exit(all, strerror(errno));
-	while (str[i] && str[i] != '=')
+	while (str[i])
 		key[k++] = str[i++];
 	key[k] = '\0';
 	return (key);
