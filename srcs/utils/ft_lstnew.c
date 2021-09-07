@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 13:30:59 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 16:39:43 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/07 12:00:41 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_env	*ft_lstnew_env(char *value, char *key)
 {
 	t_env	*new;
 
-	new = (t_env *)malloc(sizeof(t_env));
+	new = (t_env *)ft_calloc(1, sizeof(t_env));
 	if (new == 0)
 		return (0);
 	new->key = key;
