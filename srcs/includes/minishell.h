@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/06 13:35:32 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/07 16:03:41 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -270,6 +270,8 @@ void	replace_env_2(t_all *all);
 char	*ft_getenv(t_all *all, char *key);
 char	**env_to_array(t_all *all, t_env *env);
 void	copy_env_2(t_all *all, char **envp);
+char	*get_key(t_all *all, char	*str);
+char	*get_value(t_all *all, char	*str);
 
 /*
 	Pipe
@@ -286,6 +288,8 @@ int		ft_exit_bi(t_all *all, t_list *node);
 int		ft_arrsize(char **args);
 int		ft_env(t_all *all, t_list *node);
 int		ft_export(t_all *all, t_list *node);
+int		ft_unset(t_all *all, t_list *node);
+int		is_key_in_env(t_all *all, char *key);
 
 /*
 	SHLVL

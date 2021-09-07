@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executable.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:49:57 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/06 18:21:22 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/07 11:36:26 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,12 @@ int		is_buildin(t_pipe *node)
 		if (!ft_strcmp(node->list[i]->com, "pwd"))
 			return (1);
 		if (!ft_strcmp(node->list[i]->com, "cd"))
+			return (1);
+		if (!ft_strcmp(node->list[i]->com, "env"))
+			return (1);
+		if (!ft_strcmp(node->list[i]->com, "export"))
+			return (1);
+		if (!ft_strcmp(node->list[i]->com, "unset"))
 			return (1);
 		i++;
 	}
