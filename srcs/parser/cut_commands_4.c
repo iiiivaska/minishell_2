@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_commands_4.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:24:48 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 17:26:04 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:56:46 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*cut_command_from_str(t_all *all, char *str, int *i)
 
 	k = 0;
 	str_2 = (char *)malloc(sizeof(char) * (ft_strlen(str) - *i + 1));
+	if (str_2 == 0)
+		ft_exit(all, strerror(errno));
 	while (str[*i])
 	{
 		str_2[k] = str[*i];
@@ -38,7 +40,7 @@ void	add_list_spec(t_all *all, char *str, int pipe)
 
 	sym = check_sym(str);
 	i = 0;
-	redir = cut_redir_from_str(all, str, &i);
+	redir = cut_redir_from_str(str, &i);
 	com = cut_command_from_str(all, str, &i);
 	if (com[0])
 		ft_lstadd_back(&(all->commands), ft_lstnew(redir, sym, 0));

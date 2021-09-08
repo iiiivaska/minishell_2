@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:53:59 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 16:36:59 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:47:55 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	ft_lstclear_pipe(t_pipe **lst)
 {
 	t_pipe	*temp;
 	t_pipe	*temp2;
-	int		i;
 
 	if (*lst == 0 || lst == 0)
 		return ;

@@ -16,7 +16,6 @@ char	*get_env_name_2(t_all *all, int i)
 {
 	char	*name_env;
 	int	 	k;
-	char	*env;
 
 	k = i;
 	if (ft_isnum(all->her_str[i + 1]))

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   redirect_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 15:33:07 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 16:16:07 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 10:02:51 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-void	err_red(t_all *all, t_pipe *node, int i)
+void	err_red(t_pipe *node, int i)
 {
 	ft_putstr_fd("minishell: ", STDERR);
 	ft_putstr_fd(node->list[i]->args[0], STDERR);

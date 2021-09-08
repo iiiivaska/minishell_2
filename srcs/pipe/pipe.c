@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipe.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 12:18:40 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/17 13:12:19 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:58:19 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	pipes_count(t_list *list)
 	return (i + 1);
 }
 
-void	add_commands_pipe(t_all *all, t_list *node, t_pipe *pipe)
+void	add_commands_pipe(t_list *node, t_pipe *pipe)
 {
 	t_list	*nd;
 	int		i;
@@ -65,7 +65,7 @@ void	parse_pipe(t_all *all)
 			pipe = cur_pipe;
 		else
 			ft_lstadd_back_2(&pipe, cur_pipe);
-		add_commands_pipe(all, node, cur_pipe);
+		add_commands_pipe(node, cur_pipe);
 		while (node && node->pipe != PIPE)
 			node = node->next;
 		if (node != 0)

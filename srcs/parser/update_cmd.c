@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update_cmd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 14:15:20 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/17 14:16:24 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:57:55 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	add_param_pipe(t_all *all, t_pipe *pipe, int ex, int param)
 	while (pipe->list[ex]->args[i])
 		i++;
 	new_args = (char **)malloc(sizeof(char *) * (i + 2 + k));
+	if (new_args)
+		ft_exit(all, strerror(errno));
 	i = 0;
 	while ((pipe->list[ex]->args[i]) != 0)
 	{
@@ -50,7 +52,7 @@ void	add_param_pipe(t_all *all, t_pipe *pipe, int ex, int param)
 	pipe->list[ex]->args = new_args;
 }
 
-int	find_exec(t_all *all, t_pipe *pipe)
+int	find_exec(t_pipe *pipe)
 {
 	int	i;
 	int	k;
@@ -93,7 +95,7 @@ void	update_cmd(t_all *all)
 	node = all->pipe;
 	while (node)
 	{
-		ex = find_exec(all, node);
+		ex = find_exec(node);
 		if (ex != -1)
 			update_cmd_2(all, node, ex);
 		node = node->next;

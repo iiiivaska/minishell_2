@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   increment_shell_lvl.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 16:16:47 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 16:17:42 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 10:29:26 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-void	increment(t_all *all, t_env *env)
+void	increment(t_env *env)
 {
-	char	*new_lvl;
 	int		lvl;
 
 	lvl = ft_atoi(env->value) + 1;
@@ -31,7 +30,7 @@ void	increment_shell_lvl(t_all *all)
 	{
 		if (!ft_strcmp(env->key, "SHLVL"))
 		{
-			increment(all, env);
+			increment(env);
 			break ;
 		}
 		env = env->next;
@@ -41,7 +40,7 @@ void	increment_shell_lvl(t_all *all)
 	{
 		if (!ft_strcmp(env->key, "SHLVL"))
 		{
-			increment(all, env);
+			increment(env);
 			break ;
 		}
 		env = env->next;

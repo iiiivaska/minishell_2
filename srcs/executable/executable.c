@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executable.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:49:57 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/07 11:36:26 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/08 09:58:35 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,6 @@ void	ft_pipes_7(t_all *all, int fd_old, t_pipe *node, int *fd)
 void	executable(t_all *all)
 {
 	t_pipe	*node;
-	char	*path;
 	int		fd_old;
 	int		fd[2];
 

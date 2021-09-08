@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 18:02:34 by bsadie            #+#    #+#             */
-/*   Updated: 2021/09/06 13:27:40 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/08 10:05:59 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-int	ft_exit_bi(t_all *all, t_list *node)
+int	ft_exit_bi(t_all *all)
 {
 	ft_exit(all, NOERROR);
 	return (0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_commands_3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:09:44 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/17 13:52:13 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 10:23:22 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void	cut_commands(t_all *all)
 	int	 	pipe;
 
 	pipes = 0;
+	pipe = 0;
 	i = 0;
 	t = 0;
 	while (all->command[i])

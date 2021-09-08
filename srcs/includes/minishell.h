@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/07 16:03:41 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/08 10:05:52 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,7 +204,7 @@ void	cut_quot_args(t_all *all);
 void	check_syntax(t_all *all);
 void	add_list_std(t_all *all, char *str, int pipe);
 int		check_sym(char *str);
-char	*cut_redir_from_str(t_all *all, char *str, int *i);
+char	*cut_redir_from_str(char *str, int *i);
 char	*cut_command_from_str(t_all *all, char *str, int *i);
 void	add_list_spec(t_all *all, char *str, int pipe);
 void	add_commands_to_list(t_all *all, char **redir, int pipe);
@@ -256,7 +256,7 @@ void	find_and_start_right_redir(t_all *all, t_pipe *node);
 void	double_back_redirect(t_all *all, t_list *node, t_pipe *pipe);
 int		find_and_start_doub_back_redir(t_all *all, t_pipe *node, int k);
 void	find_and_start_sin_back_redir(t_all *all, t_pipe *node, int p_d);
-void	err_red(t_all *all, t_pipe *node, int i);
+void	err_red(t_pipe *node, int i);
 void	out_doub_back_redir(t_all *all, t_pipe *pipe);
 void	back_redir_2(int k, int p_d, int fd, t_pipe *node);
 void	doub_back_2(t_all *all, t_list *node);
@@ -283,8 +283,8 @@ void	parse_pipe(t_all *all);
 */
 int		ft_echo(char **args);
 int		ft_pwd(void);
-int		ft_cd(t_all *all, t_list *node);
-int		ft_exit_bi(t_all *all, t_list *node);
+int		ft_cd(t_list *node);
+int		ft_exit_bi(t_all *all);
 int		ft_arrsize(char **args);
 int		ft_env(t_all *all, t_list *node);
 int		ft_export(t_all *all, t_list *node);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_space.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:28:27 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 17:35:13 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:50:10 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*cut_inner(t_list *node, int sp_size, int i)
 	return (new_command);
 }
 
-void	cut_inner_space(t_all *all, t_list *node)
+void	cut_inner_space(t_list *node)
 {
 	int		i;
 	int		sp_size;
@@ -108,7 +108,7 @@ void	cut_space(t_all *all)
 	{
 		cut_pre_space(all, node);
 		cut_post_space(all, node);
-		cut_inner_space(all, node);
+		cut_inner_space(node);
 		node = node->next;
 	}
 }

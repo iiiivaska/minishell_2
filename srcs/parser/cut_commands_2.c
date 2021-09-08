@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_commands_2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:07:28 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 17:24:21 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:53:30 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	*cpy(char *str, int *i)
 	return (str_2);
 }
 
-char	*cut_redir_from_str(t_all *all, char *str, int *i)
+char	*cut_redir_from_str(char *str, int *i)
 {
 	while (str[*i] && ft_isspace(str[*i]))
 		*i = *i + 1;

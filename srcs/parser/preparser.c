@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   preparser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:12:02 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/17 14:07:13 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:48:12 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ void	check_pipes_pre(t_all *all)
 void	check_redir(t_all *all)
 {
 	int	i;
-	int	k;
 
 	i = 0;
 	while (all->command[i])

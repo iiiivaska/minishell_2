@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_path.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 15:48:45 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 18:10:18 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:52:36 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*get_path(t_all *all, int *i, char *path)
 	while (path[*i] && path[*i] != ':')
 		*i = *i + 1;
 	path_2 = (char *)malloc(sizeof(char) * (*i - k + 1));
+	if (path_2 == 0)
+		ft_exit(all, strerror(errno));
 	while (k < *i)
 		path_2[z++] = path[k++];
 	path_2[z] = '\0';

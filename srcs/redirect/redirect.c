@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:54:03 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 17:23:41 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 10:28:45 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ void	create_heredoc_name(t_all *all, t_pipe *pipe, int i, int k)
 
 void	double_back_redirect(t_all *all, t_list *node, t_pipe *pipe)
 {
-	char	*str;
-
 	g_sig.dyn = 1;
 	all->fd_heredoc = open(pipe->heredoc, O_CREAT | O_WRONLY | O_TRUNC, 0666);
 	if (all->fd_heredoc < 0)
@@ -98,9 +96,11 @@ void	find_and_start_sin_back_redir(t_all *all, t_pipe *node, int p_d)
 			if (fd)
 				close(fd);
 			fd = open(node->list[i]->com, O_RDONLY, 0);
+			if (!fd)
+				ft_exit(all, strerror(errno));
 			if (fd < 0)
 			{
-				err_red(all, node, i);
+				err_red(node, i);
 				return ;
 			}
 			k = i + 1;
@@ -125,6 +125,8 @@ void	find_and_start_right_redir(t_all *all, t_pipe *node)
 				close(fd);
 			fd = open(node->list[i]->com, O_CREAT
 					| O_WRONLY | O_TRUNC, 0666);
+			if (!fd)
+				ft_exit(all, strerror(errno));
 		}
 		if (node->list[i]->sym == AN_BR_R_D)
 		{
@@ -132,6 +134,8 @@ void	find_and_start_right_redir(t_all *all, t_pipe *node)
 				close(fd);
 			fd = open(node->list[i]->com, O_CREAT
 					| O_WRONLY | O_APPEND, 0666);
+			if (!fd)
+				ft_exit(all, strerror(errno));
 		}
 		i++;
 	}

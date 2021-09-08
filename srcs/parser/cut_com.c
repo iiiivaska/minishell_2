@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_com.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:56:42 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 16:54:05 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:51:47 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,13 +117,6 @@ void	cut_com_sp(t_all *all, t_list *node)
 	node->com = com;
 }
 
-void	cut_com_2(t_all *all, t_list *node)
-{
-	char	*com;
-
-	cut_com_sp(all, node);
-}
-
 void	cut_com(t_all *all)
 {
 	t_list	*node;
@@ -131,7 +124,7 @@ void	cut_com(t_all *all)
 	node = all->commands;
 	while (node)
 	{
-		cut_com_2(all, node);
+		cut_com_sp(all, node);
 		node = node->next;
 	}
 }

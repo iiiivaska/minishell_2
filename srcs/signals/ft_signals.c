@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 18:34:13 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/03 15:53:54 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 10:01:16 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ void	sig_int_2(void)
 
 void	ft_sigint(int s)
 {
-	char	*buffer;
-
+	s = s + 0;
 	if (!g_sig.pid)
 	{
 		if (!g_sig.dyn)

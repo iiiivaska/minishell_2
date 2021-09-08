@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_param.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 14:45:22 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 17:27:59 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:51:05 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	add_param(t_list *node, char *param)
 	node->args = new_args;
 }
 
-char	*cut_arg(t_all *all, t_list *node, int i, int t)
+char	*cut_arg(t_list *node, int i, int t)
 {
 	char	*arg;
 	int		z;
@@ -54,7 +54,7 @@ char	*cut_arg(t_all *all, t_list *node, int i, int t)
 	return (arg);
 }
 
-void	cut_param_2(t_all *all, t_list *node)
+void	cut_param_2(t_list *node)
 {
 	int		i;
 	int		t;
@@ -68,14 +68,14 @@ void	cut_param_2(t_all *all, t_list *node)
 		skip_quotes_lst(node, &i);
 		if (node->command[i] == ' ')
 		{
-			arg = cut_arg(all, node, i, t);
+			arg = cut_arg(node, i, t);
 			add_param(node, arg);
 			t = i + 1;
 		}
 		i++;
 		if (!node->command[i])
 		{
-			arg = cut_arg(all, node, i, t);
+			arg = cut_arg(node, i, t);
 			add_param(node, arg);
 		}
 	}
@@ -88,7 +88,7 @@ void	cut_param(t_all *all)
 	node = all->commands;
 	while (node)
 	{
-		cut_param_2(all, node);
+		cut_param_2(node);
 		node = node->next;
 	}
 }

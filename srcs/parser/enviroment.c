@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enviroment.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:36:15 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 17:53:08 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 09:48:33 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*get_env_name(t_all *all, int i, t_list *node)
 {
 	char	*name_env;
 	int	 	k;
-	char	*env;
 
 	k = i;
 	if (ft_isnum(node->command[i + 1]))

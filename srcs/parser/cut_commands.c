@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_commands.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 16:54:46 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 17:11:47 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 10:21:43 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ char	*cut_str_redir(t_all *all, char *str, int i, int t)
 	char	*str_n;
 	int	 	k;
 
+	all->in = all->in;
 	k = 0;
 	str_n = (char *)malloc(sizeof(char) * (i - t + 2));
 	while (t < i)
