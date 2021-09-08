@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 11:34:05 by bsadie            #+#    #+#             */
-/*   Updated: 2021/09/08 12:18:05 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/08 13:31:53 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 void	free_env_node(t_env *env)
 {
 	if (env)
+	{
+		if (env->key)
+			free(env->key);
+		if (env->value)
+			free(env->value);
 		free(env);
+	}
 }
 
 t_env	*get_prev(t_env *oldenv, char *key)
@@ -49,7 +55,7 @@ int	lst_del_node(t_env *oldenv, char *key)
 		if (!ft_strcmp(env->key, key))
 		{
 			prev->next = env->next;
-			free_env_node(env);
+			//free_env_node(env);
 			return (0);
 		}
 		env = env->next;
@@ -63,19 +69,22 @@ int	ft_unset(t_all *all, t_list *node)
 	t_env	*env;
 	int		i;
 	char	*key;
+	char	*key1;
 
 	i = 1;
 	env = all->env_l;
 	while (node->args[i])
 	{
 		key = get_value(all, node->args[i]);
+		key1 = get_value(all, node->args[i]);
 		if (!is_key_in_env(all, key))
 		{
 			lst_del_node(all->env_l, key);
-			lst_del_node(all->hidden_env, key);
+			lst_del_node(all->hidden_env, key1);
 		}
 		i++;
 		free(key);
+		free(key1);
 	}
 	return (0);
 }
