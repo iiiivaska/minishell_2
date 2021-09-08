@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 15:34:02 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/08 16:18:51 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,57 @@
 	Preparser Errors
 */
 
-# define DOUBQUOTNI 228 //Двойные кавычки не замкнуты
-# define QUOTNI 229 //Одинарные кавычки не замкнуты
-# define SEMICOLON 3 // ; - не в кавычках
-# define SLASH 4 // \ - не в кавычках
-# define DPIPE 5 // || - ошибка
-# define EPIPE 6 // Пустота после/до пайпа
-# define DREDIR 7 // <</>>
+# define DOUBQUOTNI 228
+
+/*Двойные кавычки не замкнуты*/
+
+# define QUOTNI 229
+
+/*Одинарные кавычки не замкнуты*/
+
+# define SEMICOLON 3
+
+/*; - не в кавычках*/
+
+# define SLASH 4
+
+/*\ - не в кавычках*/
+
+# define DPIPE 5
+
+/*|| - ошибка*/
+
+# define EPIPE 6
+
+/*Пустота после/до пайпа*/
+
+# define DREDIR 7
+
+/*<</>>*/
 
 /*
 	Spec Symbols
 */
 
-# define PIPE 1 // |
-# define AN_BR_L 2 // <
-# define AN_BR_R 3 // >
-# define AN_BR_L_D 4 // <<
-# define AN_BR_R_D 5 // >>
+# define PIPE 1
+
+/*|*/
+
+# define AN_BR_L 2
+
+/*<*/
+
+# define AN_BR_R 3
+
+/*>*/
+
+# define AN_BR_L_D 4
+
+/*<<*/
+
+# define AN_BR_R_D 5
+
+/*>>*/
 
 # include "readline/readline.h"
 # include "readline/history.h"
