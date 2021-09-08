@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 10:05:52 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 15:22:14 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 /*
 	Preparser Errors
 */
+
 # define DOUBQUOTNI 228 //Двойные кавычки не замкнуты
 # define QUOTNI 229 //Одинарные кавычки не замкнуты
 # define SEMICOLON 3 // ; - не в кавычках
@@ -68,8 +69,8 @@ typedef struct s_list
 {
 	char			*command;
 	char			*command_2;
-	int	 			sym;
-	int	 			pipe;
+	int				sym;
+	int				pipe;
 	char			**args;
 	char			*com;
 	int				quot_com;
@@ -119,7 +120,7 @@ typedef struct s_sig
 	int			s_int;
 	int			s_quit;
 	int			exit_stat;
-	int	 		dyn;
+	int			dyn;
 }				t_sig;
 
 /*
@@ -178,7 +179,11 @@ void	ft_sigill(int s);
 /*
 	readline.h
 */
+# ifdef __APPLE__
+
 void	rl_replace_line(char *str, int i);
+
+# endif
 
 /*
 	init
