@@ -39,21 +39,12 @@ all		:	$(NAME)
 HEADER	=	includes/minishell.h
 
 ifeq ($(UNAME_S),Darwin)
-
 FLAGS	=	-Wall -Wextra -Werror -lreadline -L/usr/local/Cellar/readline/8.1/lib -L/usr/local/Cellar/readline/8.1/include -ltermcap
-
 endif
 
 ifeq ($(UNAME_S),Linux)
-
 FLAGS = -g -Wall -Wextra -Werror -lreadline -ltermcap -lncurses
-
 endif
-
-FLAGS	=	-Wall -Wextra -Werror -lreadline -L/usr/local/Cellar/readline/8.1/lib -L/usr/local/Cellar/readline/8.1/include -ltermcap
-
-#$(NAME)	:	$(OBJ) $(HEADER)
-#			gcc -o $(NAME) $(FLAGS) $(OBJ)
 
 $(NAME)	:	$(OBJ) $(HEADER)
 			$(GCC) $(FLAGS) -g -o $(NAME) $(OBJ)

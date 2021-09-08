@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 15:22:14 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/08 15:34:02 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@
 # include "errno.h"
 # include "string.h"
 # include <sys/types.h>
+# include <sys/wait.h>
 # include <dirent.h>
 # include <fcntl.h>
 
