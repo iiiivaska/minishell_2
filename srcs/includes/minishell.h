@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/09 17:49:34 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/09 18:19:30 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,6 +210,8 @@ void	ft_sigint(int sig);
 void	ft_signothing(int sig);
 void	init_signals(void);
 void	ft_sigill(int s);
+void	ft_signothing_1(void);
+void	ft_signothing_2(void);
 
 /*
 	readline.h

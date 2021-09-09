@@ -17,7 +17,7 @@ SRCS	= 	main/minishell.c main/init_term.c main/init_all.c \
 			pipe/pipe.c \
 			executable/executable.c executable/find_path.c executable/executable_2.c executable/executable_3.c executable/executable_4.c\
 			exit/ft_exit.c exit/clean.c \
-			signals/ft_signals.c \
+			signals/ft_signals.c signals/ft_signals_2.c \
 			enviroment/env.c enviroment/env_2.c\
 			redirect/redirect.c redirect/redirect_2.c\
 			buildins/echo.c buildins/pwd.c buildins/cd.c buildins/exit.c buildins/env.c buildins/export.c buildins/unset.c \

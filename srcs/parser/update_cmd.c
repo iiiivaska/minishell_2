@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update_cmd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 14:15:20 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 09:57:55 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:26:22 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	add_param_pipe(t_all *all, t_pipe *pipe, int ex, int param)
 	i = 0;
 	while ((pipe->list[ex]->args[i]) != 0)
 	{
-		new_args[i] = ft_strdup(pipe->list[ex]->args[i]);
-		i++;
+		new_args[i] = ft_strdup(pipe->list[ex]->args[i++]);
+		//i++;
 	}
 	new_args[i++] = ft_strdup(pipe->list[param]->com);
 	k = 1;
