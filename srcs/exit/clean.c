@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:51:19 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 14:57:36 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 14:26:42 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,6 @@ void	clean(t_all *all)
 	ft_clean_path(all);
 	clear_history();
 	ft_clear_t_env(all->env_l);
-	ft_clear_t_env(all->hidden_env);
+	//ft_clear_t_env(all->hidden_env);
 	//ft_clear_pipe(all);
 }
