@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 16:18:51 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/09 17:49:34 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -317,6 +317,9 @@ char	*get_value(t_all *all, char	*str);
 	Pipe
 */
 void	parse_pipe(t_all *all);
+void	ft_pipes_3(t_all *all, int fd_old, t_pipe *node, int *fd);
+void	ft_pipes_5(t_all *all, t_pipe *node, int i, int status);
+void	ft_pipes_4(char *path, int status);
 
 /*
 	Buidins

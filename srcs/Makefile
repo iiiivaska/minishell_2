@@ -15,7 +15,7 @@ SRCS	= 	main/minishell.c main/init_term.c main/init_all.c \
 			parser/enviroment_3.c parser/enviroment_4.c parser/check_quotes.c parser/cut_quot_2.c\
 			parser/cut_commands_5.c parser/update_cmd.c\
 			pipe/pipe.c \
-			executable/executable.c executable/find_path.c executable/executable_2.c executable/executable_3.c\
+			executable/executable.c executable/find_path.c executable/executable_2.c executable/executable_3.c executable/executable_4.c\
 			exit/ft_exit.c exit/clean.c \
 			signals/ft_signals.c \
 			enviroment/env.c enviroment/env_2.c\

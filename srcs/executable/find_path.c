@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 13:10:38 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/09 09:30:06 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 17:50:37 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*join_path(char *path, const char *s)
 
 char	*check_dir(char *path, char *command)
 {
-	DIR	 			*folder;
+	DIR				*folder;
 	struct dirent	*item;
 	char			*pth;
 
@@ -46,7 +46,7 @@ char	*check_dir(char *path, char *command)
 
 char	*full_path(t_all *all, t_list *node)
 {
-	int	 	i;
+	int		i;
 	char	*full_path;
 
 	full_path = 0;
