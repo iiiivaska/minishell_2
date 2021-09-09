@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/09 18:19:30 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/09 18:47:14 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,6 +202,7 @@ void	ft_delay(int count);
 void	ft_exit(t_all *all, char *error);
 void	clean(t_all *all);
 void	del(void *str);
+void	ft_check_close_fd(t_all *all, int fd);
 
 /*
 	Signals

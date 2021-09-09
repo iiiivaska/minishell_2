@@ -19,7 +19,7 @@ SRCS	= 	main/minishell.c main/init_term.c main/init_all.c \
 			exit/ft_exit.c exit/clean.c \
 			signals/ft_signals.c signals/ft_signals_2.c \
 			enviroment/env.c enviroment/env_2.c\
-			redirect/redirect.c redirect/redirect_2.c\
+			redirect/redirect.c redirect/redirect_2.c redirect/redirect_3.c\
 			buildins/echo.c buildins/pwd.c buildins/cd.c buildins/exit.c buildins/env.c buildins/export.c buildins/unset.c \
 			shel_lvl/increment_shell_lvl.c
 
