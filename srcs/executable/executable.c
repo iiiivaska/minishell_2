@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executable.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:49:57 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 09:58:35 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 16:03:54 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,16 @@ void	ft_pipes_4(char *path, int status)
 
 void	ft_pipes_5(t_all *all, t_pipe *node, int i, int status)
 {
+	int		k;
+	char	**j;
+
 	if (status == -1)
 	{
-		execve(full_path(all, (node->list[i])),
-			node->list[i]->args, env_to_array(all, all->env_l));
+		j = env_to_array(all, all->env_l);
+		k = execve(full_path(all, (node->list[i])),
+			node->list[i]->args, (char *const *)j);
+		if (k == -1)
+			free(j);
 	}
 }
 
