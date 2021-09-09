@@ -6,11 +6,26 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:22:20 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/09 18:34:18 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/09 18:39:43 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+char	*find_sym(t_list *node)
+{
+	if (node->pipe == PIPE)
+		return ("|");
+	if (node->next->sym == AN_BR_R)
+		return (">");
+	if (node->next->sym == AN_BR_L)
+		return ("<");
+	if (node->next->sym == AN_BR_R_D)
+		return (">>");
+	if (node->next->sym == AN_BR_L_D)
+		return ("<<");
+	return (" ");
+}
 
 void	ft_putstr_fd_1(t_list *node)
 {
@@ -28,21 +43,6 @@ void	ft_putstr_fd_2(t_list *node)
 		ft_putstr_fd("minishell: syntax error near unexpecte", STDERR);
 		ft_putstr_fd("d token `newline'\n", STDERR);
 	}
-}
-
-char	*find_sym(t_list *node)
-{
-	if (node->pipe == PIPE)
-		return ("|");
-	if (node->next->sym == AN_BR_R)
-		return (">");
-	if (node->next->sym == AN_BR_L)
-		return ("<");
-	if (node->next->sym == AN_BR_R_D)
-		return (">>");
-	if (node->next->sym == AN_BR_L_D)
-		return ("<<");
-	return (" ");
 }
 
 void	check_syntax(t_all *all)

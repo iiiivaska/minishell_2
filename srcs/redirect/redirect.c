@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:54:03 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 10:28:45 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:37:56 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	find_and_start_sin_back_redir(t_all *all, t_pipe *node, int p_d)
 
 	k = 0;
 	i = 0;
-	fd = 0;
+//	fd = 0;
 	while (node->list[i])
 	{
 		if (node->list[i]->sym == AN_BR_L)
