@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 11:26:55 by bsadie            #+#    #+#             */
-/*   Updated: 2021/09/08 15:54:22 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/09 15:48:18 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 
 int	replace_value(t_env *oldenv, char *key, char *value)
 {
-	t_env	*env;
-
-	env = oldenv;
-	while (env)
+	while (oldenv)
 	{
-		if (!ft_strcmp(env->key, key))
+		if (!ft_strcmp(oldenv->key, key))
 		{
-			if (env->value)
-				free(env->value);
-			oldenv->value = ft_strdup(value);
+			if (oldenv->value)
+				free(oldenv->value);
+			oldenv->value = value;
 			return (0);
 		}
-		env = env->next;
+		oldenv = oldenv->next;
 	}
 	return (1);
 }
@@ -83,12 +80,11 @@ int	ft_export(t_all *all, t_list *node)
 		if (!is_key_in_env(all, key))
 		{
 			replace_value(all->env_l, key, value);
-			replace_value(all->hidden_env, key, value);
+			free(key);
 		}
 		else
 		{
 			ft_lstadd_back_env(&all->env_l, ft_lstnew_env(value, key));
-			ft_lstadd_back_env(&all->hidden_env, ft_lstnew_env(value, key));
 		}
 	}
 	return (0);

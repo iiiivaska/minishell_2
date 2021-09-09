@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 11:19:03 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/09 14:32:48 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/09 15:32:41 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*get_key(t_all *all, char	*str)
 	key = 0;
 	while (str[i] && str[i] != '=')
 		i++;
-	if (str[i] == '=')
+	if (str[i] == '=' && str[i + 1] != '\0')
 	{
 		i++;
 		key = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
