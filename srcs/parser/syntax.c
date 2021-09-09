@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   syntax.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:22:20 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 18:26:09 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 10:20:18 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,11 @@ void	check_syntax(t_all *all)
 			}
 			else
 			{
-				ft_putstr_fd("minishell: syntax error near unexpecte", STDERR);
-				ft_putstr_fd("d token `newline'\n", STDERR);
+				if (node->com[0] != '\0')
+				{
+					ft_putstr_fd("minishell: syntax error near unexpecte", STDERR);
+					ft_putstr_fd("d token `newline'\n", STDERR);
+				}
 			}
 			return ;
 		}
