@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 16:28:15 by bsadie            #+#    #+#             */
-/*   Updated: 2021/09/08 10:03:53 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/08 13:29:57 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ int	ft_cd(t_list *node)
 		printf("minishell: cd: %s\n", strerror(errno));
 		return (1);
 	}
-	//ft_pwd();
 	return (0);
 }

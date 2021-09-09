@@ -23,16 +23,31 @@ SRCS	= 	main/minishell.c main/init_term.c main/init_all.c \
 			buildins/echo.c buildins/pwd.c buildins/cd.c buildins/exit.c buildins/env.c buildins/export.c buildins/unset.c \
 			shel_lvl/increment_shell_lvl.c
 
+UNAME_S := $(shell uname -s)
+
+GCC = clang
+
+NEWFLAGS = -g -Wall -Wextra -Werror
+
 OBJ		=	$(SRCS:.c=.o)
+
+%.o: %.c $(HEADER)
+	$(GCC) $(NEWFLAGS) -c $< -o $@
 
 all		:	$(NAME)
 
 HEADER	=	includes/minishell.h
 
+ifeq ($(UNAME_S),Darwin)
 FLAGS	=	-Wall -Wextra -Werror -lreadline -L/usr/local/Cellar/readline/8.1/lib -L/usr/local/Cellar/readline/8.1/include -ltermcap
+endif
+
+ifeq ($(UNAME_S),Linux)
+FLAGS = -g -Wall -Wextra -Werror -lreadline -ltermcap -lncurses
+endif
 
 $(NAME)	:	$(OBJ) $(HEADER)
-			gcc -o $(NAME) $(FLAGS) $(OBJ)
+			$(GCC) $(FLAGS) -g -o $(NAME) $(OBJ)
 
 clean	:	
 			rm -f $(OBJ)

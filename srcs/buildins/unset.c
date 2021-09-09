@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 11:34:05 by bsadie            #+#    #+#             */
-/*   Updated: 2021/09/07 15:48:49 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/08 16:07:29 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	free_env_node(t_env *env)
 			free(env->key);
 		if (env->value)
 			free(env->value);
-	//	if (env->next)
-	//		free(env->next);
 		free(env);
 	}
 }
@@ -57,7 +55,7 @@ int	lst_del_node(t_env *oldenv, char *key)
 		if (!ft_strcmp(env->key, key))
 		{
 			prev->next = env->next;
-		//	free_env_node(env);
+			free_env_node(env);
 			return (0);
 		}
 		env = env->next;
@@ -74,13 +72,12 @@ int	ft_unset(t_all *all, t_list *node)
 
 	i = 1;
 	env = all->env_l;
-	while(node->args[i])
+	while (node->args[i])
 	{
 		key = get_value(all, node->args[i]);
 		if (!is_key_in_env(all, key))
 		{
 			lst_del_node(all->env_l, key);
-			lst_del_node(all->hidden_env, key);
 		}
 		i++;
 		free(key);
