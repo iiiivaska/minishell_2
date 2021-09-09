@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   env_2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:11:17 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 14:15:01 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 17:43:49 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_getenv(t_all *all, char *key)
 int	env_size(t_env *env)
 {
 	t_env	*env_c;
-	int	 	i;
+	int		i;
 
 	i = 0;
 	env_c = env;
@@ -67,7 +67,7 @@ char	**env_to_array(t_all *all, t_env *env)
 	t_env	*env_c;
 	char	**array;
 	char	*temp;
-	int	 	i;
+	int		i;
 
 	i = 0;
 	array = 0;
