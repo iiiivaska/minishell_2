@@ -15,7 +15,7 @@
 char	*get_env_name_2(t_all *all, int i)
 {
 	char	*name_env;
-	int	 	k;
+	int		k;
 
 	k = i;
 	if (ft_isnum(all->her_str[i + 1]))
@@ -42,7 +42,7 @@ char	*get_env_name_2(t_all *all, int i)
 int	get_env_name_lenght_2(t_all *all, int i)
 {
 	char	*name_env;
-	int	 	size;
+	int		size;
 
 	name_env = get_env_name_2(all, i);
 	size = ft_strlen(name_env);
@@ -70,10 +70,10 @@ char	*get_env_2(t_all *all, int i)
 
 void	cut_path_2(t_all *all, int i)
 {
-	int	 	env_s;
+	int		env_s;
 	char	*new_command;
 	char	*env_name;
-	int	 	k;
+	int		k;
 
 	k = 0;
 	env_name = get_env_name_2(all, i);

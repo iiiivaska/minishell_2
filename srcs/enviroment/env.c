@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 11:19:03 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/07 11:41:59 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/09 15:32:41 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,19 @@ char	*get_key(t_all *all, char	*str)
 	key = 0;
 	while (str[i] && str[i] != '=')
 		i++;
-	i++;
-	key = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
-	if (!key)
-		ft_exit(all, strerror(errno));
-	while (str[i])
-		key[k++] = str[i++];
-	key[k] = '\0';
-	return (key);
+	if (str[i] == '=' && str[i + 1] != '\0')
+	{
+		i++;
+		key = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+		if (!key)
+			ft_exit(all, strerror(errno));
+		while (str[i])
+			key[k++] = str[i++];
+		key[k] = '\0';
+		return (key);
+	}
+	else
+		return (ft_strdup(" "));
 }
 
 void	env_to_list(t_all *all)

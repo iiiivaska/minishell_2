@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirect.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:54:03 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 10:28:45 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:49:04 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,7 @@ void	find_and_start_sin_back_redir(t_all *all, t_pipe *node, int p_d)
 	int	fd;
 	int	k;
 
-	k = 0;
 	i = 0;
-	fd = 0;
 	while (node->list[i])
 	{
 		if (node->list[i]->sym == AN_BR_L)
@@ -115,18 +113,18 @@ void	find_and_start_right_redir(t_all *all, t_pipe *node)
 	int	i;
 	int	fd;
 
-	fd = 0;
 	i = 0;
 	while (node->list[i])
 	{
 		if (node->list[i]->sym == AN_BR_R)
 		{
-			if (fd)
-				close(fd);
 			fd = open(node->list[i]->com, O_CREAT
 					| O_WRONLY | O_TRUNC, 0666);
+			ft_check_close_fd(all, fd);
+			/*
 			if (!fd)
 				ft_exit(all, strerror(errno));
+				*/
 		}
 		if (node->list[i]->sym == AN_BR_R_D)
 		{
@@ -134,8 +132,11 @@ void	find_and_start_right_redir(t_all *all, t_pipe *node)
 				close(fd);
 			fd = open(node->list[i]->com, O_CREAT
 					| O_WRONLY | O_APPEND, 0666);
+			ft_check_close_fd(all, fd);
+					/*
 			if (!fd)
 				ft_exit(all, strerror(errno));
+				*/
 		}
 		i++;
 	}

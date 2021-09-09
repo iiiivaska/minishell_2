@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enviroment.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:36:15 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 09:48:33 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:05:12 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*get_env_name(t_all *all, int i, t_list *node)
 {
 	char	*name_env;
-	int	 	k;
+	int		k;
 
 	k = i;
 	if (ft_isnum(node->command[i + 1]))
@@ -42,7 +42,7 @@ char	*get_env_name(t_all *all, int i, t_list *node)
 int	get_env_name_lenght(t_all *all, int i, t_list *node)
 {
 	char	*name_env;
-	int	 	size;
+	int		size;
 
 	name_env = get_env_name(all, i, node);
 	size = ft_strlen(name_env);
@@ -70,10 +70,10 @@ char	*get_env(t_all *all, int i, t_list *node)
 
 void	cut_path(t_all *all, int i, t_list *node)
 {
-	int	 	env_s;
+	int		env_s;
 	char	*new_command;
 	char	*env_name;
-	int	 	k;
+	int		k;
 
 	k = 0;
 	env_name = get_env_name(all, i, node);

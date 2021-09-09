@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_space.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:28:27 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 09:50:10 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:01:53 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	cut_pre_space(t_all *all, t_list *lst)
 
 void	cut_post_space(t_all *all, t_list *lst)
 {
-	int	 	i;
-	int	 	k;
+	int		i;
+	int		k;
 	char	*new_comm;
 
 	i = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:51:19 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 14:57:36 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 17:55:21 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	del(void *str)
 void	ft_clean_env(t_all *all)
 {
 	int	i;
-	
+
 	i = 0;
 	if (all->env)
 	{
@@ -72,7 +72,7 @@ void	ft_clear_t_env(t_env *env)
 // {
 // 	t_pipe	*temp;
 // 	t_pipe	*s_temp;
-	
+
 // 	if (all->pipe)
 // 	{
 // 		temp = all->pipe;
@@ -95,6 +95,6 @@ void	clean(t_all *all)
 	ft_clean_path(all);
 	clear_history();
 	ft_clear_t_env(all->env_l);
-	ft_clear_t_env(all->hidden_env);
+	//ft_clear_t_env(all->hidden_env);
 	//ft_clear_pipe(all);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:32:27 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 10:09:02 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 17:56:05 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ void	read_line(t_all *all)
 	}
 	if (ft_strlen(all->command) > 0)
 		add_history(all->command);
-	// if (!ft_strcmp(all->command, "exit\0"))
-	// 	ft_exit(all, NOERROR);
 	start_shell(all);
 	if (all->command)
 		free(all->command);

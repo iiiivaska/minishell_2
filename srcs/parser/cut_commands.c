@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_commands.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 16:54:46 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 10:21:43 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:02:27 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*cut_str_pipe(t_all *all, int i, int t)
 char	**cut_pipes(t_all *all, int k, int t, char **pipes)
 {
 	char	**new_pipes;
-	int	 	i;
+	int		i;
 
 	i = 0;
 	if (!pipes)
@@ -73,7 +73,7 @@ void	skip_quotes_str(char *str, int *i)
 char	*cut_str_redir(t_all *all, char *str, int i, int t)
 {
 	char	*str_n;
-	int	 	k;
+	int		k;
 
 	all->in = all->in;
 	k = 0;
@@ -87,7 +87,7 @@ char	*cut_str_redir(t_all *all, char *str, int i, int t)
 char	**cut_redir_2(t_all *all, int *z, char *str, char **redir)
 {
 	char	**new_redir;
-	int	 	k;
+	int		k;
 
 	k = 0;
 	if (!redir)
