@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enviroment_4.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:05:02 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 18:05:36 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:00:13 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	insert_str_2(t_all *all, char *str, int *i)
 {
-	int	 	str_s;
+	int		str_s;
 	char	*new_str;
-	int	 	k;
+	int		k;
 	int		z;
 
 	z = 0;

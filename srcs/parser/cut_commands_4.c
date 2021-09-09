@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cut_commands_4.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:24:48 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 09:56:46 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:03:24 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*cut_command_from_str(t_all *all, char *str, int *i)
 {
 	char	*str_2;
-	int	 	k;
+	int		k;
 
 	k = 0;
 	str_2 = (char *)malloc(sizeof(char) * (ft_strlen(str) - *i + 1));
@@ -33,8 +33,8 @@ char	*cut_command_from_str(t_all *all, char *str, int *i)
 
 void	add_list_spec(t_all *all, char *str, int pipe)
 {
-	int	 	i;
-	int	 	sym;
+	int		i;
+	int		sym;
 	char	*redir;
 	char	*com;
 
