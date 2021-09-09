@@ -14,7 +14,7 @@
 
 void	cut_q(t_all *all, t_list *lst, int i)
 {
-	int	 	k;
+	int		k;
 	char	*new_com;
 
 	k = 0;
@@ -50,7 +50,7 @@ void	cut_quot(t_all *all)
 
 void	cut_q_2(t_all *all, t_list *lst, int i, int z)
 {
-	int	 	k;
+	int		k;
 	char	*new_com;
 
 	k = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 11:26:55 by bsadie            #+#    #+#             */
-/*   Updated: 2021/09/08 15:54:22 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/09 19:33:36 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ int	replace_value(t_env *oldenv, char *key, char *value)
 		if (!ft_strcmp(env->key, key))
 		{
 			if (env->value)
+			{
 				free(env->value);
-			oldenv->value = ft_strdup(value);
+				env->value = 0;
+			}
+			env->value = ft_strdup(value);
 			return (0);
 		}
 		env = env->next;
@@ -74,12 +77,14 @@ int	ft_export(t_all *all, t_list *node)
 
 	i = 1;
 	str = node->args;
+	//printf("%s | %s\n",str[i], str[i+1]);
 	if (!str[i])
 		ft_export_no_arg(all->env_l);
 	while (str[i])
 	{
 		value = get_key(all, str[i]);
-		key = get_value(all, str[i++]);
+		key = get_value(all, str[i]);
+		printf("%s | %s\n", key, value);
 		if (!is_key_in_env(all, key))
 		{
 			replace_value(all->env_l, key, value);
@@ -87,9 +92,12 @@ int	ft_export(t_all *all, t_list *node)
 		}
 		else
 		{
-			ft_lstadd_back_env(&all->env_l, ft_lstnew_env(value, key));
-			ft_lstadd_back_env(&all->hidden_env, ft_lstnew_env(value, key));
+			ft_lstadd_back_env(&(all->env_l), ft_lstnew_env(ft_strdup(value), ft_strdup(key)));
+			ft_lstadd_back_env(&(all->hidden_env), ft_lstnew_env(ft_strdup(value), ft_strdup(key)));
 		}
+		free(value);
+		free(key);
+		i++;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:28:27 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 09:50:10 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 15:14:38 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	cut_pre_space(t_all *all, t_list *lst)
 
 void	cut_post_space(t_all *all, t_list *lst)
 {
-	int	 	i;
-	int	 	k;
+	int		i;
+	int		k;
 	char	*new_comm;
 
 	i = 0;

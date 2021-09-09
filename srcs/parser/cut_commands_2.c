@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:07:28 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 09:53:30 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 15:15:34 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	check_sym(char *str)
 char	*cpy(char *str, int *i)
 {
 	char	*str_2;
-	int	 	k;
+	int		k;
 
 	k = 0;
 	str_2 = (char *)malloc(sizeof(char) * (*i + 1));

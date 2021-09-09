@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enviroment_3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:53:34 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 17:56:43 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 15:14:03 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	insert_str(t_all *all, char *str, int *i, t_list *node)
 {
-	int	 	str_s;
+	int		str_s;
 	char	*new_str;
-	int	 	k;
-	int	 	z;
+	int		k;
+	int		z;
 
 	z = 0;
 	k = 0;

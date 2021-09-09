@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 15:48:45 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 09:52:36 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:50:39 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ void	parse_path(t_all *all)
 	i = 0;
 	path = ft_strdup(ft_getenv(all, "PATH"));
 	if (!path)
-		ft_exit(all, "No PATH in Enviroment"); // Подумать над выводом
+	{
+		all->path = (char **)malloc(sizeof(char *) * (1));
+		all->path[0] = 0;
+		return ;
+	}
 	while (path[i++])
 		if (path[i] == ':')
 			k++;

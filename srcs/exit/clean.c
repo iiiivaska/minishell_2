@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:51:19 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 14:57:36 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 18:38:07 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	del(void *str)
 {
-	free(str);
+	if (str)
+		free(str);
 }
 
 void	ft_clean_env(t_all *all)
@@ -63,7 +64,8 @@ void	ft_clear_t_env(t_env *env)
 				free(temp->value);
 			s_temp = temp;
 			temp = temp->next;
-			free(s_temp);
+			if (s_temp)
+				free(s_temp);
 		}
 	}
 }
