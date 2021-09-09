@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executable_3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 13:00:58 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/17 18:20:49 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 14:19:56 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	close_wait(int status, int *fd)
 
 void	unlink_close(t_all *all, t_pipe *node)
 {
-	unlink(node->heredoc);
+	//unlink(node->heredoc);
 	all->fd_heredoc = 0;
 	close(node->fdout);
 	close(node->fdin);
