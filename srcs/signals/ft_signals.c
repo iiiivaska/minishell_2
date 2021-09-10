@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 18:34:13 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 10:01:16 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 17:34:02 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@ void	init_signals(void)
 	g_sig.s_int = 0;
 	g_sig.s_quit = 0;
 	g_sig.pid = 0;
+	g_sig.ch = 0;
+	g_sig.dyn = 0;
+}
+
+void	init_signals_2(void)
+{
+	signal(SIGQUIT, &ft_signothing);
+	signal(SIGINT, &ft_sigint);
+	g_sig.s_int = 0;
+	g_sig.s_quit = 0;
+	g_sig.pid = 0;
+	g_sig.ch = g_sig.ch;
 	g_sig.dyn = 0;
 }
 
@@ -92,19 +104,25 @@ void	ft_signothing(int s)
 	if (!g_sig.pid)
 	{
 		if (!g_sig.dyn)
+			ft_signothing_1();
+		/*
 		{
 			b = ft_strlen(rl_line_buffer);
 			a = ft_strlen(PROMPT);
 			tputs(tgoto(tgetstr("ch", NULL), 0, a + b), 1, ft_putint);
 			tputs(tgoto(tgetstr("DC", NULL), 0, 2), 1, ft_putint);
 		}
+		*/
 		else
+			ft_signothing_2();
+		/*
 		{
 			b = ft_strlen(rl_line_buffer);
 			a = ft_strlen("> ");
 			tputs(tgoto(tgetstr("ch", NULL), 0, a + b), 1, ft_putint);
 			tputs(tgoto(tgetstr("DC", NULL), 0, 2), 1, ft_putint);
 		}
+		*/
 	}
 	else
 	{

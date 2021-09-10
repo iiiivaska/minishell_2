@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cd.c                                               :+:      :+:    :+:   */
+/*   ft_signals_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/01 16:28:15 by bsadie            #+#    #+#             */
-/*   Updated: 2021/09/08 13:29:57 by bsadie           ###   ########.fr       */
+/*   Created: 2021/09/09 18:15:17 by bsadie            #+#    #+#             */
+/*   Updated: 2021/09/09 18:20:41 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-int	ft_cd(t_list *node)
+void	ft_signothing_1(void)
 {
-	char	**args;
+	int	a;
+	int	b;
 
-	args = node->args;
-	if (args[1])
-	{
-		if (ft_arrsize(args) > 2)
-		{
-			write(STDERR, "minishell: cd: ", 15);
-			ft_putendl_fd(strerror(E2BIG), STDERR);
-			return (2);
-		}
-		if (chdir(args[1]))
-		{
-			write(STDERR, "minishell: cd: ", 15);
-			ft_putendl_fd(strerror(errno), STDERR);
-			return (1);
-		}
-	}
-	return (0);
+	b = ft_strlen(rl_line_buffer);
+	a = ft_strlen(PROMPT);
+	tputs(tgoto(tgetstr("ch", NULL), 0, a + b), 1, ft_putint);
+	tputs(tgoto(tgetstr("DC", NULL), 0, 2), 1, ft_putint);
+}
+
+void	ft_signothing_2(void)
+{
+	int	a;
+	int	b;
+
+	b = ft_strlen(rl_line_buffer);
+	a = ft_strlen("> ");
+	tputs(tgoto(tgetstr("ch", NULL), 0, a + b), 1, ft_putint);
+	tputs(tgoto(tgetstr("DC", NULL), 0, 2), 1, ft_putint);
 }

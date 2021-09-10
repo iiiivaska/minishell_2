@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 16:18:51 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/10 18:39:12 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,6 @@ typedef struct s_all
 	t_list	*commands;
 	t_pipe	*pipe;
 	t_env	*env_l;
-	t_env	*hidden_env;
 }				t_all;
 
 typedef struct s_sig
@@ -156,6 +155,7 @@ typedef struct s_sig
 	int			s_quit;
 	int			exit_stat;
 	int			dyn;
+	int			ch;
 }				t_sig;
 
 /*
@@ -175,7 +175,7 @@ void	ft_lstadd_back_2(t_pipe **lst, t_pipe *new);
 void	ft_putchar(char c);
 void	*ft_calloc(size_t number, size_t size);
 void	ft_bzero(void *s, size_t n);
-void	skip_quotes(t_all *all, int *i); // Пропускаем болк с кавычками в строке
+void	skip_quotes(t_all *all, int *i);
 void	skip_quotes_lst(t_list *all, int *i);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
@@ -183,8 +183,8 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *str);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_putint(int c);
-int		is_escape(char *str, int num); //Проверяем экранирован ли символ
-int		is_spec(char ch); //Проверка на спецсимвол
+int		is_escape(char *str, int num);
+int		is_spec(char ch);
 int		ft_isspace(char ch);
 int		is_valid_env_name(char ch);
 char	*ft_itoa(int n);
@@ -202,6 +202,7 @@ void	ft_delay(int count);
 void	ft_exit(t_all *all, char *error);
 void	clean(t_all *all);
 void	del(void *str);
+void	ft_exit_ch(t_all *all, char *error);
 
 /*
 	Signals
@@ -210,6 +211,9 @@ void	ft_sigint(int sig);
 void	ft_signothing(int sig);
 void	init_signals(void);
 void	ft_sigill(int s);
+void	ft_signothing_1(void);
+void	ft_signothing_2(void);
+void	init_signals_2(void);
 
 /*
 	readline.h
@@ -317,6 +321,9 @@ char	*get_value(t_all *all, char	*str);
 	Pipe
 */
 void	parse_pipe(t_all *all);
+void	ft_pipes_3(t_all *all, int fd_old, t_pipe *node, int *fd);
+void	ft_pipes_5(t_all *all, t_pipe *node, int i, int status);
+void	ft_pipes_4(char *path, int status);
 
 /*
 	Buidins

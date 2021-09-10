@@ -6,7 +6,7 @@
 /*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 13:29:42 by bsadie            #+#    #+#             */
-/*   Updated: 2021/09/08 13:29:43 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/10 16:29:55 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,19 @@ int	ft_echo(char **args)
 	i = 1;
 	flag = 0;
 	count = ft_arrsize(args);
-	if (args[1][0] == '-' && args[1][1] == 'n' && args[1][2] == '\0')
+	if (args[1])
 	{
-		flag = 1;
-		i++;
-	}
-	while (i < count)
-	{
-		ft_putstr_sp(args[i++]);
-		if (i < count)
-			ft_putchar(' ');
+		if (args[1][0] == '-' && args[1][1] == 'n' && args[1][2] == '\0')
+		{
+			flag = 1;
+			i++;
+		}
+		while (i < count)
+		{
+			ft_putstr_sp(args[i++]);
+			if (i < count)
+				ft_putchar(' ');
+		}
 	}
 	if (flag == 0)
 		ft_putchar('\n');

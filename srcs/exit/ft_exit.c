@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 13:46:23 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/17 14:18:00 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 17:31:18 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_exit(t_all *all, char *error)
 {
-	printf("exit\n");
+	if (g_sig.ch == 0)
+		printf("exit\n");
 	if (all)
 		clean(all);
 	if (error)

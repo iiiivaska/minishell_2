@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   executable_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:58:36 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/09 18:44:57 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/09 17:44:45 by bsadie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	build_in(t_all *all, t_list *node)
 		return (ft_exit_bi(all));
 	if (!ft_strcmp(node->com, "unset"))
 		return (ft_unset(all, node));
-		
 	return (-1);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eghis <eghis@student.42.fr>                +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:25:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/07/16 14:26:08 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 18:27:01 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ void	init_all(t_all *all)
 	all->commands = 0;
 	all->pipe = 0;
 	all->env_l = 0;
-	all->hidden_env = 0;
 }
