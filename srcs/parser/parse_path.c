@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 15:48:45 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/10 17:05:54 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 22:47:40 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,25 @@ char	*get_path(t_all *all, int *i, char *path)
 	return (path_2);
 }
 
+void	null_path(t_all *all)
+{
+	all->path = (char **)malloc(sizeof(char *) * (1));
+	all->path[0] = 0;
+}
+
+int	get_k(char *path)
+{
+	int	i;
+	int	k;
+
+	k = 0;
+	i = 0;
+	while (path[i++])
+		if (path[i] == ':')
+			k++;
+	return (k);
+}
+
 void	parse_path(t_all *all)
 {
 	char	*path;
@@ -42,13 +61,10 @@ void	parse_path(t_all *all)
 	path = ft_strdup(ft_getenv(all, "PATH"));
 	if (!path)
 	{
-		all->path = (char **)malloc(sizeof(char *) * (1));
-		all->path[0] = 0;
+		null_path(all);
 		return ;
 	}
-	while (path[i++])
-		if (path[i] == ':')
-			k++;
+	k = get_k(path);
 	all->path = (char **)malloc(sizeof(char *) * (k + 2));
 	i = 0;
 	k = 0;

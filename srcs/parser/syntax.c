@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   syntax.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsadie <bsadie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:22:20 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/09 18:05:51 by bsadie           ###   ########.fr       */
+/*   Updated: 2021/09/10 22:29:55 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ char	*find_sym(t_list *node)
 	return (" ");
 }
 
+void	check_syntax_2(t_list *node)
+{
+	ft_putstr_fd("minishell: syntax error near unexpected token ",
+		STDERR);
+	ft_putstr_fd("`", STDERR);
+	ft_putstr_fd(find_sym(node), STDERR);
+	ft_putstr_fd("\'\n", STDERR);
+}
+
 void	check_syntax(t_all *all)
 {
 	t_list	*node;
@@ -39,17 +48,14 @@ void	check_syntax(t_all *all)
 			all->error = 1;
 			if (node->next)
 			{
-				ft_putstr_fd("minishell: syntax error near unexpected token ",
-					STDERR);
-				ft_putstr_fd("`", STDERR);
-				ft_putstr_fd(find_sym(node), STDERR);
-				ft_putstr_fd("\'\n", STDERR);
+				check_syntax_2(node);
 			}
 			else
 			{
 				if (node->com[0] != '\0')
 				{
-					ft_putstr_fd("minishell: syntax error near unexpecte", STDERR);
+					ft_putstr_fd("minishell: syntax error near unexpecte",
+						STDERR);
 					ft_putstr_fd("d token `newline'\n", STDERR);
 				}
 			}

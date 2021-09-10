@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 18:51:19 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/10 18:28:13 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 22:41:34 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,44 +47,26 @@ void	ft_clean_path(t_all *all)
 	}
 }
 
-void	ft_clear_t_env(t_env *env)
+void	ft_clean_pipe(t_all *all)
 {
-	t_env	*temp;
-	t_env	*s_temp;
+	t_pipe	*temp;
+	t_pipe	*s_temp;
 
-	if (env)
+	if (all->pipe)
 	{
-		temp = env;
+		temp = all->pipe;
 		while (temp != 0)
 		{
-			if (temp->key)
-				free(temp->key);
-			if (temp->value)
-				free(temp->value);
+			if (temp->list)
+				free(temp->list);
+			if (temp->heredoc)
+				free(temp->heredoc);
 			s_temp = temp;
 			temp = temp->next;
 			free(s_temp);
 		}
 	}
 }
-
-// void	ft_clear_pipe(t_all *all)
-// {
-// 	t_pipe	*temp;
-// 	t_pipe	*s_temp;
-
-// 	if (all->pipe)
-// 	{
-// 		temp = all->pipe;
-// 		while (temp != 0)
-// 		{
-// 			ft_lstclear(&(temp->list), &del);
-// 			s_temp = temp;
-// 			temp = temp->next;
-// 			free(s_temp);
-// 		}
-// 	}
-// }
 
 void	clean(t_all *all)
 {
@@ -95,5 +77,5 @@ void	clean(t_all *all)
 	ft_clean_path(all);
 	clear_history();
 	ft_clear_t_env(all->env_l);
-	//ft_clear_pipe(all);
+	ft_clean_pipe(all);
 }

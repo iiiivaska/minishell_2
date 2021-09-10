@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:18:43 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/10 18:39:12 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 22:42:11 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,14 +138,14 @@ typedef struct s_all
 	char	*heredoc;
 	int		in;
 	int		out;
-	char	*command;
+	char	*command;//-
 	int		error;
-	char	**path;
-	char	**env;
+	char	**path;//-
+	char	**env;//-
 	int		pid;
-	t_list	*commands;
-	t_pipe	*pipe;
-	t_env	*env_l;
+	t_list	*commands;//-
+	t_pipe	*pipe; //-
+	t_env	*env_l;//-
 }				t_all;
 
 typedef struct s_sig
@@ -195,6 +195,7 @@ void	ft_putstr_fd(char *s, int fd);
 int		ft_atoi(const char *s);
 char	*ft_strchr(const char *string, int symbol);
 void	ft_delay(int count);
+int		is_valid_en(char *str);
 
 /*
 	Exit
@@ -203,6 +204,7 @@ void	ft_exit(t_all *all, char *error);
 void	clean(t_all *all);
 void	del(void *str);
 void	ft_exit_ch(t_all *all, char *error);
+void	ft_clear_t_env(t_env *env);
 
 /*
 	Signals
@@ -305,6 +307,8 @@ void	out_doub_back_redir(t_all *all, t_pipe *pipe);
 void	back_redir_2(int k, int p_d, int fd, t_pipe *node);
 void	doub_back_2(t_all *all, t_list *node);
 void	doub_back_3(t_all *all, int flag);
+int		get_fd(t_all *all, t_pipe *node, int i);
+int		get_red_fd(t_all *all, int i, t_pipe *node, int fd);
 
 /*
 	Enviroment

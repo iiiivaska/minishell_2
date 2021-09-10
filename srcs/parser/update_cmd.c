@@ -6,13 +6,13 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 14:15:20 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/10 18:04:53 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 22:25:53 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-void	free_args_2(t_pipe *pipe, int ex)
+void	free_args_2(t_pipe *pipe, int ex, char **new_args)
 {
 	int	i;
 
@@ -20,6 +20,7 @@ void	free_args_2(t_pipe *pipe, int ex)
 	while (pipe->list[ex]->args[i])
 		free(pipe->list[ex]->args[i++]);
 	free(pipe->list[ex]->args);
+	pipe->list[ex]->args = new_args;
 }
 
 void	add_param_pipe(t_all *all, t_pipe *pipe, int ex, int param)
@@ -48,8 +49,7 @@ void	add_param_pipe(t_all *all, t_pipe *pipe, int ex, int param)
 	while (pipe->list[param]->args[k])
 		new_args[i++] = ft_strdup(pipe->list[param]->args[k++]);
 	new_args[i] = 0;
-	free_args_2(pipe, ex);
-	pipe->list[ex]->args = new_args;
+	free_args_2(pipe, ex, new_args);
 }
 
 int	find_exec(t_pipe *pipe)

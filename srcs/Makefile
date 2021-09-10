@@ -8,7 +8,7 @@ SRCS	= 	main/minishell.c main/init_term.c main/init_all.c \
 			utils/ft_strdup.c utils/ft_lstadd_back.c utils/ft_lstnew.c utils/ft_lstlast.c \
 			utils/ft_lstclear.c utils/ft_itoa.c utils/ft_free_path.c utils/ft_isnum.c\
 			utils/ft_putend_fd.c utils/ft_putstr_fd.c utils/ft_lstnew_pipe.c utils/is_valid_env_name.c\
-			utils/ft_atoi.c utils/ft_strchr.c utils/ft_delay.c\
+			utils/ft_atoi.c utils/ft_strchr.c utils/ft_delay.c utils/is_valid_en.c\
 			parser/parser.c parser/preparser.c parser/enviroment.c parser/quot.c parser/cut_commands.c \
 			parser/cut_space.c parser/cut_param.c parser/cut_com.c parser/parse_path.c parser/enviroment_2.c\
 			parser/syntax.c parser/cut_commands_2.c parser/cut_commands_3.c parser/cut_commands_4.c\
@@ -16,10 +16,10 @@ SRCS	= 	main/minishell.c main/init_term.c main/init_all.c \
 			parser/cut_commands_5.c parser/update_cmd.c\
 			pipe/pipe.c \
 			executable/executable.c executable/find_path.c executable/executable_2.c executable/executable_3.c executable/executable_4.c\
-			exit/ft_exit.c exit/clean.c \
+			exit/ft_exit.c exit/clean.c exit/clean_2.c\
 			signals/ft_signals.c signals/ft_signals_2.c \
 			enviroment/env.c enviroment/env_2.c\
-			redirect/redirect.c redirect/redirect_2.c\
+			redirect/redirect.c redirect/redirect_2.c redirect/redirect_3.c\
 			buildins/echo.c buildins/pwd.c buildins/cd.c buildins/exit.c buildins/env.c buildins/export.c buildins/unset.c \
 			shel_lvl/increment_shell_lvl.c
 

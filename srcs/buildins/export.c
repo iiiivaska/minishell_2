@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 11:26:55 by bsadie            #+#    #+#             */
-/*   Updated: 2021/09/10 18:26:10 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 20:18:12 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,28 @@ int	ft_export_no_arg(t_env *env)
 	{
 		ft_putstr_fd("declare -x ", 1);
 		ft_putstr_fd(tmp->key, 1);
-		if(tmp->value != 0)
+		if (tmp->value != 0)
 		{
 			ft_putchar('=');
+			ft_putchar('\"');
 			ft_putstr_fd(tmp->value, 1);
+			ft_putchar('\"');
 		}
 		ft_putchar('\n');
 		tmp = tmp->next;
 	}
 	return (0);
+}
+
+void	ft_export_2(t_all *all, char *key, char *value)
+{
+	if (!is_key_in_env(all, key))
+	{
+		replace_value(all->env_l, key, value);
+		free(key);
+	}
+	else
+		ft_lstadd_back_env(&all->env_l, ft_lstnew_env(value, key));
 }
 
 int	ft_export(t_all *all, t_list *node)
@@ -75,17 +88,13 @@ int	ft_export(t_all *all, t_list *node)
 		ft_export_no_arg(all->env_l);
 	while (str[i])
 	{
-		value = get_key(all, str[i]);
-		key = get_value(all, str[i++]);
-		if (!is_key_in_env(all, key))
+		if (is_valid_en(str[i]))
 		{
-			replace_value(all->env_l, key, value);
-			free(key);
+			value = get_key(all, str[i]);
+			key = get_value(all, str[i]);
+			ft_export_2(all, key, value);
 		}
-		else
-		{
-			ft_lstadd_back_env(&all->env_l, ft_lstnew_env(value, key));
-		}
+		i++;
 	}
 	return (0);
 }

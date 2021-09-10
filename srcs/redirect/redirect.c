@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 14:54:03 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/08 10:28:45 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 22:40:40 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,7 @@ void	find_and_start_sin_back_redir(t_all *all, t_pipe *node, int p_d)
 		{
 			if (fd)
 				close(fd);
-			fd = open(node->list[i]->com, O_RDONLY, 0);
-			if (!fd)
-				ft_exit(all, strerror(errno));
+			fd = get_fd(all, node, i);
 			if (fd < 0)
 			{
 				err_red(node, i);
@@ -121,12 +119,7 @@ void	find_and_start_right_redir(t_all *all, t_pipe *node)
 	{
 		if (node->list[i]->sym == AN_BR_R)
 		{
-			if (fd)
-				close(fd);
-			fd = open(node->list[i]->com, O_CREAT
-					| O_WRONLY | O_TRUNC, 0666);
-			if (!fd)
-				ft_exit(all, strerror(errno));
+			fd = get_red_fd(all, i, node, fd);
 		}
 		if (node->list[i]->sym == AN_BR_R_D)
 		{

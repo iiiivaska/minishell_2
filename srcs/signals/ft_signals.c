@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 18:34:13 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/10 17:34:02 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 19:29:35 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,46 +90,4 @@ void	ft_sigint(int s)
 		g_sig.exit_stat = 130;
 	}
 	g_sig.s_int = 1;
-}
-
-void	ft_signothing(int s)
-{
-	int		a;
-	int		b;
-	char	*nbr;
-
-	a = 0;
-	b = 0;
-	nbr = ft_itoa(s);
-	if (!g_sig.pid)
-	{
-		if (!g_sig.dyn)
-			ft_signothing_1();
-		/*
-		{
-			b = ft_strlen(rl_line_buffer);
-			a = ft_strlen(PROMPT);
-			tputs(tgoto(tgetstr("ch", NULL), 0, a + b), 1, ft_putint);
-			tputs(tgoto(tgetstr("DC", NULL), 0, 2), 1, ft_putint);
-		}
-		*/
-		else
-			ft_signothing_2();
-		/*
-		{
-			b = ft_strlen(rl_line_buffer);
-			a = ft_strlen("> ");
-			tputs(tgoto(tgetstr("ch", NULL), 0, a + b), 1, ft_putint);
-			tputs(tgoto(tgetstr("DC", NULL), 0, 2), 1, ft_putint);
-		}
-		*/
-	}
-	else
-	{
-		ft_putstr_fd("Quit: ", STDERR);
-		ft_putstr_fd(nbr, STDERR);
-		ft_putstr_fd("\n", STDERR);
-		g_sig.s_quit = 1;
-		g_sig.exit_stat = 131;
-	}
 }

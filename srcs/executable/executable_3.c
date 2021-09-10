@@ -6,7 +6,7 @@
 /*   By: eghis <eghis@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 13:00:58 by eghis             #+#    #+#             */
-/*   Updated: 2021/09/10 18:05:30 by eghis            ###   ########.fr       */
+/*   Updated: 2021/09/10 23:08:25 by eghis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ void	close_wait(int status, int *fd)
 
 void	unlink_close(t_all *all, t_pipe *node)
 {
-	unlink(node->heredoc);
+	int	k;
+	
+	if (node->heredoc)
+		k = unlink(node->heredoc);
 	all->fd_heredoc = 0;
 	close(node->fdout);
 	close(node->fdin);
